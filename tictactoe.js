@@ -43,7 +43,40 @@ var isGameOver = (board) => {
 
 var getValueFromComputer = () => {
     //Yet to write the logic
-    return 'tm'
+    if(board.mm == ' ') return 'mm';
+
+    //Condition to return tl
+    if( board.tl == ' ' && 
+        (board.tm == board.tr && board.tm == 'x') || 
+        (board.ml == board.ll && board.ml == 'x') ||
+        (board.mm == board.lr && board.mm == 'x')) 
+        return 'tl';
+
+    //Condition to return tm
+    if( board.tm == ' ' && 
+        (board.tl == board.tr && board.tl == 'x') || 
+        (board.mm == board.lm && board.mm == 'x')) 
+        return 'tm';
+
+    //Condition to return tr
+
+
+    //Condition to return ml
+
+
+    //Condition to return mm
+
+
+    //Condition to return mr
+
+
+    //Condition to return ll
+
+
+    //Condition to return lm
+
+
+    return 'lr'
 }
 
 console.log('                      --------Game Started---------                       ');
@@ -64,7 +97,7 @@ while (!isGameOver(board)) {
         board[cPos] = 'o'
         drawBoard(board);
         if (isGameOver(board)) {
-        console.log('computer won!');
+            console.log('computer won!');
         }
     } else {
         console.log('user won!');
